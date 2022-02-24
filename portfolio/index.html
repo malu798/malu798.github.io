@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+
+<html>
+
+
+<head>
+    <meta charset="utf-8" />
+    <title>Page Title</title> 
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+
+
+<body>
+
+  <body bgcolor="#333333">
+
+  </div>
+
+
+</body>
+
+
+
+<div class="hwrap"><div class="hmove">
+  <div class="hitem">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+  <div class="hitem">Aliquam consequat varius consequat.</div>
+  <div class="hitem">Fusce dapibus turpis vel nisi malesuada sollicitudin.</div>
+  <div class="hitem">Pellentesque auctor molestie orci ut blandit.</div>
+</div></div>
+
+
+
+
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for stocks..">
+
+<table id="myTable">
+  
+  <tr class="header">
+    <th style="width:40%;">Name</th>
+    <th style="width:30%;">Country</th>
+    <th style="width:15%;">3</th>
+    <th style="width:15%;">5</th>
+  </tr>
+  <tr>
+    <td>Alfreds Futterkiste</td>
+    <td>Germany</td>
+    <td>Germany</td>
+  </tr>
+  <tr>
+    <td>Berglunds snabbkop</td>
+    <td>Sweden</td>
+  </tr>
+  <tr>
+    <td>Island Trading</td>
+    <td>UK</td>
+  </tr>
+  <tr>
+    <td>Koniglich Essen</td>
+    <td>Germany</td>
+  </tr>
+  <tr>
+    <td>Alfreds Futterkiste</td>
+    <td>Germany</td>
+  </tr>
+  <tr>
+    <td>Berglunds snabbkop</td>
+    <td>Sweden</td>
+  </tr>
+  <tr>
+    <td>Island Trading</td>
+    <td>UK</td>
+  </tr>
+  <tr>
+    <td>Koniglich Essen</td>
+    <td>Germany</td>
+  </tr>
+  <tr>
+    <td>Alfreds Futterkiste</td>
+    <td>Germany</td>
+  </tr>
+  <tr>
+    <td>Berglunds snabbkop</td>
+    <td>Sweden</td>
+  </tr>
+  <tr>
+    <td>Island Trading</td>
+    <td>UK</td>
+  </tr>
+  <tr>
+    <td>Koniglich Essen</td>
+    <td>Germany</td>
+  </tr>
+  <tr>
+    <td>Alfreds Futterkiste</td>
+    <td>Germany</td>
+  </tr>
+  <tr>
+    <td>Berglunds snabbkop</td>
+    <td>Sweden</td>
+  </tr>
+
+
+
+</table> 
+
+
+
+
+
+
+
+
+
+<script>
+  function myFunction() {
+    // Declare variables
+    var input, filter, table, tr, td, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("myTable");
+    tr = table.getElementsByTagName("tr");
+  
+    // Loop through all table rows, and hide those who don't match the search query
+    for (i = 0; i < tr.length; i++) {
+      td = tr[i].getElementsByTagName("td")[0];
+      if (td) {
+        txtValue = td.textContent || td.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          tr[i].style.display = "";
+        } else {
+          tr[i].style.display = "none";
+        }
+      }
+    }
+  }
+  </script>
+
+
+
+
+
+
+<div class="navbar">
+  <a href="#home">Home</a>
+  
+</div>
+
+ 
+
+<script>
+
+  $.ajax({
+    url: 'https://api.marketstack.com/v1/tickers/aapl/eod',
+    data: {
+      access_key: '900035eacc63e1e3452abf081fa408b6'
+    },
+    dataType: 'json',
+    success: function(apiResponse) {
+      if (Array.isArray(apiResponse['data'])) {
+        apiResponse['data'].forEach(stockData => {
+              console.log(`Ticker ${stockData['symbol']}`,
+                  `has a day high of ${stockData['high']},
+                  `on ${stockData['date']}`);
+        });
+      }
+    }
+  });
+      
+    
+ 
+
+
+
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
+
+
+
